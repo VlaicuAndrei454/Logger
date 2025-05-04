@@ -1,5 +1,8 @@
 package com.example.decorator;
 
+
+//Basic logger
+//Only emits messages >= threshold(default = Error)
 public class ConsoleLogger implements ILogger {
     private LogLevel threshold;
 

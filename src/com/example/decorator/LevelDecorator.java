@@ -1,5 +1,7 @@
 package com.example.decorator;
 
+
+//Adds “[LEVEL] ” (e.g. “[INFO] ”) to each message.
 public class LevelDecorator extends LoggerDecorator {
     public LevelDecorator(ILogger wrappee) {
         super(wrappee);

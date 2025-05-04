@@ -1,5 +1,9 @@
 package com.example.decorator;
 
+
+//The base class for decorators
+//Delegates all calls by default
+
 public abstract class LoggerDecorator implements ILogger {
     protected final ILogger wrappee;
 

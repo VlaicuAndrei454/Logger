@@ -1,5 +1,6 @@
 package com.example.decorator;
 
+//adds the current thread’s ID in “[TID:id] ” form.
 
 public class ThreadIdDecorator extends LoggerDecorator {
     public ThreadIdDecorator(ILogger wrappee) {
