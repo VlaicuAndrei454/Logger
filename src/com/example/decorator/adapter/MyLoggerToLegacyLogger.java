@@ -1,26 +1,34 @@
-package com.example.adapter;
+package com.example.decorator.adapter;
 
-import com.example.adapter.abstracts.ILegacyLogger;
-import com.example.adapter.abstracts.AMyLogger;
-import com.example.adapter.abstracts.LogLevel;
+import com.example.decorator.ILogger;
 
 public class MyLoggerToLegacyLogger implements ILegacyLogger {
-    AMyLogger refference;
+    ILogger reference;
+    boolean loggerState = false;
 
-    public MyLoggerToLegacyLogger(AMyLogger refference){
-        this.refference = refference;
+    public MyLoggerToLegacyLogger(ILogger refference){
+        this.reference = refference;
     }
 
-    boolean loggerState;
 
     @Override
     public void logTheError(String[] log) {
-        LogLevel level = LogLevel.valueOf(log[0]);
-        refference.log(level, log[1]);
+        if(!loggerState){
+            System.out.println("Logger is turned off");
+        }else if(isItTooBig(computeTheLogSize(log))){
+            System.out.println("Message too big!");
+        }else{
+            String message = String.join(" ", log);
+            System.out.println(message);
+        }
     }
 
     @Override
     public void setTheLoggingState(boolean state) {
+        if(state) {
+            System.out.println("*Logger ON*");
+        }else
+            System.out.println("*Logger OFF*");
         this.loggerState = state;
     }
 

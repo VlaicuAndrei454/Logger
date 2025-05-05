@@ -5,7 +5,7 @@ package com.example.decorator;
 //Only emits messages >= threshold(default = Error)
 public class ConsoleLogger implements ILogger {
     private LogLevel threshold;
-
+    public String[] message;
     public ConsoleLogger() {
         this.threshold = LogLevel.ERROR;  // default only ERROR
     }
@@ -15,10 +15,12 @@ public class ConsoleLogger implements ILogger {
     }
 
     @Override
-    public void log(LogLevel level, String message) {
+    public String log(LogLevel level, String message) {
         if (level.ordinal() >= threshold.ordinal()) {
-            System.out.println(message);
+            this.message = message.split(" ");
+            return message;
         }
+        return "";
     }
 }
 

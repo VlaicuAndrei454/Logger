@@ -10,9 +10,9 @@ public class TimestampDecorator extends LoggerDecorator {
     }
 
     @Override
-    public void log(LogLevel level, String message) {
+    public String log(LogLevel level, String message) {
         String withTs = Instant.now() + " " + message;
-        super.log(level, withTs);
+        return super.log(level, withTs);
     }
 }
 

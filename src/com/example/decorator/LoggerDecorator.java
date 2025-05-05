@@ -12,8 +12,8 @@ public abstract class LoggerDecorator implements ILogger {
     }
 
     @Override
-    public void log(LogLevel level, String message) {
-        wrappee.log(level, message);
+    public String log(LogLevel level, String message) {
+        return wrappee.log(level, message);
     }
 }
 

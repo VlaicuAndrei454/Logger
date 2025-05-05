@@ -4,6 +4,6 @@ package com.example.decorator;
 //Any logger or decorator implements this
 
 public interface ILogger {
-    void log(LogLevel level, String message);
+    String log(LogLevel level, String message);
 }
 

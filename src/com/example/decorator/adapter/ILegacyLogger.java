@@ -1,4 +1,4 @@
-package com.example.adapter.abstracts;
+package com.example.decorator.adapter;
 
 public interface ILegacyLogger {
 

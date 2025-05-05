@@ -8,9 +8,9 @@ public class ThreadIdDecorator extends LoggerDecorator {
     }
 
     @Override
-    public void log(LogLevel level, String message) {
+    public String log(LogLevel level, String message) {
         String withThread = "[TID:" + Thread.currentThread().getId() + "] " + message;
-        super.log(level, withThread);
+        return super.log(level, withThread);
     }
 }
 

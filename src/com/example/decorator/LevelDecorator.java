@@ -8,9 +8,9 @@ public class LevelDecorator extends LoggerDecorator {
     }
 
     @Override
-    public void log(LogLevel level, String message) {
+    public String log(LogLevel level, String message) {
         String withLevel = "[" + level + "] " + message;
-        super.log(level, withLevel);
+        return super.log(level, withLevel);
     }
 }
 
